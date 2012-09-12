@@ -1,0 +1,21 @@
+{
+  "name": "crocos/cloudinary-twig-extension",
+  "description": "cloudinary twig extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Keisuke SATO",
+      "email": "sato@crocos.co.jp",
+      "homepage": "http://riaf.jp",
+      "role": "Developer"
+    }
+  ],
+  "version": "1.0.0",
+  "autoload": {
+    "psr-0": {"Cloudinary\\Twig": "lib/Cloudinary"}
+  },
+  "require": {
+    "crocos/cloudinary": "*",
+    "twig/twig": "1.*"
+  },
+}
