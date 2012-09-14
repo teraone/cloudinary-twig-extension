@@ -32,8 +32,9 @@ class CloudinaryExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'cloudinary_url' => new \Twig_Function_Method($this, 'getUrl'),
-            'cloudinary_facebook_url' => new \Twig_Function_Method($this, 'getFacebookUrl'),
+            'cl_url' => new \Twig_Function_Method($this, 'getUrl'),
+            'cl_fb_url' => new \Twig_Function_Method($this, 'getFacebookUrl'),
+            'cl_fetch_url' => new \Twig_Function_Method($this, 'getFetchUrl'),
         );
     }
 
@@ -67,6 +68,20 @@ class CloudinaryExtension extends \Twig_Extension
     public function getFacebookUrl($name, array $options = array())
     {
         $options['type'] = 'facebook';
+
+        return $this->cloudinary->getUrl($name, $options);
+    }
+
+    /**
+     * Get cloudinary fetch url
+     *
+     * @param string $name
+     * @param array $options
+     * @return string
+     */
+    public function getFetchUrl($name, array $options = array())
+    {
+        $options['type'] = 'fetch';
 
         return $this->cloudinary->getUrl($name, $options);
     }

@@ -12,10 +12,16 @@
   ],
   "version": "1.0.0",
   "autoload": {
-    "psr-0": {"Cloudinary\\Twig": "lib/Cloudinary"}
+    "psr-0": {"Cloudinary\\Twig": "lib/"}
   },
   "require": {
-    "crocos/cloudinary": "*",
+    "crocos/cloudinary": "dev-develop",
     "twig/twig": "1.*"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/riaf/cloudinary_php"
+    }
+  ]
 }
