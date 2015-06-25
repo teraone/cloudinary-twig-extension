@@ -1,49 +1,22 @@
 <?php
 
-use Cloudinary\Resource as CloudinaryResource;
-use Cloudinary\Twig\Extension\CloudinaryExtension;
+
+use Teraone\Twig\Extension\CloudinaryExtension;
 
 class CloudinaryExtensionTest extends PHPUnit_Framework_TestCase
 {
     public function testConstructor()
     {
-        $ext = new CloudinaryExtension('test123');
-
+        $ext = new CloudinaryExtension();
         $this->assertEquals('cloudinary', $ext->getName());
     }
 
-    public function testGetUrl()
+    public function testCl_upload_url()
     {
-        $cloudinary = new CloudinaryResource('test123');
-        $ext = new CloudinaryExtension('test123');
-
-        $this->assertEquals(
-            $cloudinary->getUrl('test'),
-            $ext->getUrl('test')
-        );
-
-        $this->assertTrue(is_array($ext->getFunctions()));
+        Cloudinary::config_from_url(CLOUDINARY_URL);
+        $ext = new CloudinaryExtension();
+        $cloudName = Cloudinary::option_get(Cloudinary::config(),'cloud_name');
+        $this->assertEquals('https://api.cloudinary.com/v1_1/'.$cloudName.'/auto/upload', $ext->cl_upload_url());
     }
 
-    public function testGetFacebookUrl()
-    {
-        $cloudinary = new CloudinaryResource('test123');
-        $ext = new CloudinaryExtension('test123');
-
-        $this->assertEquals(
-            $cloudinary->getUrl('test', array('type' => 'facebook')),
-            $ext->getFacebookUrl('test')
-        );
-    }
-
-    public function testGetFetchUrl()
-    {
-        $cloudinary = new CloudinaryResource('test123');
-        $ext = new CloudinaryExtension('test123');
-
-        $this->assertEquals(
-            $cloudinary->getUrl('http://example.com/?hoge=fuga', array('type' => 'fetch')),
-            $ext->getFetchUrl('http://example.com/?hoge=fuga')
-        );
-    }
 }

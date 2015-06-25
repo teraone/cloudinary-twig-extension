@@ -29,6 +29,8 @@
 
   <php>
     <!-- path to the Twig lib dir -->
+      <ini name="display_errors" value="true"/>
     <const name="TWIG_LIB_DIR" value="./vendor/twig/twig/lib" />
+    <const name="CLOUDINARY_URL" value="ENTER YOUR CLOUDINAY URL HERE" />
   </php>
 </phpunit>
