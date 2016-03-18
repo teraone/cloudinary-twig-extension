@@ -20,7 +20,7 @@
     "psr-0": {"Teraone\\Twig": "lib/"}
   },
   "require": {
-    "cloudinary/cloudinary_php": "dev-master",
+    "cloudinary/cloudinary_php": "~1.2",
     "twig/twig": "1.*"
   },
   "require-dev": {
