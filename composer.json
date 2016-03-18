@@ -16,7 +16,6 @@
       "role": "Developer"
     }
   ],
-  "version": "0.2",
   "autoload": {
     "psr-0": {"Teraone\\Twig": "lib/"}
   },
