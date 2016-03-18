@@ -1,6 +1,5 @@
 Cloudinary extension for TWIG
 =========================
-Current status: BETA
 
 This package provides the Cloudinary helper functions to twig. 
 
