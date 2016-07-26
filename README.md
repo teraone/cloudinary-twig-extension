@@ -26,7 +26,7 @@ To display an image in your view simply use this tag
     
 To specify a specific image size you can use this tag
 
-    {{ cl_image_tag("sample.jpg", { "width" : 100, "height" : 150, "crop" : "fill", "html_width" => 50, "html_height" => 75}) }}
+    {{ cl_image_tag("sample.jpg", { "width" : 100, "height" : 150, "crop" : "fill", "html_width" : 50, "html_height" : 75}) }}
                 
 You can add all options as described here 
 http://cloudinary.com/documentation/php_image_manipulation
